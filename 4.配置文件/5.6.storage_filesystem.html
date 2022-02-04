@@ -1,0 +1,3057 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Filesystem · 《Vault 中文手册》</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="大可不加冰">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vsc-dark-plus.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5.7.storage_inmem.html" />
+    
+    
+    <link rel="prev" href="5.5.storage_etcd.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    什么是Vault
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1.什么是vault/1.secret_sprawl.html">
+            
+                <a href="../1.什么是vault/1.secret_sprawl.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    机密蔓生的危害及其治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1.什么是vault/2.什么是vault.html">
+            
+                <a href="../1.什么是vault/2.什么是vault.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    什么是 Vault
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1.什么是vault/3.vault_security_model.html">
+            
+                <a href="../1.什么是vault/3.vault_security_model.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    Vault 安全模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1.什么是vault/4.安装Vault.html">
+            
+                <a href="../1.什么是vault/4.安装Vault.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    安装 Vault
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1.什么是vault/5.启动标准的Vault服务.html">
+            
+                <a href="../1.什么是vault/5.启动标准的Vault服务.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    启动一个标准的 Vault 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../1.什么是vault/6.Vault的架构.html">
+            
+                <a href="../1.什么是vault/6.Vault的架构.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    Vault的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2.基本概念/基本概念.html">
+            
+                <a href="../2.基本概念/基本概念.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2.基本概念/1.Dev-Server-Mode.html">
+            
+                <a href="../2.基本概念/1.Dev-Server-Mode.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    "Dev" 服务模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2.基本概念/2.封印与解封.html">
+            
+                <a href="../2.基本概念/2.封印与解封.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    封印与解封
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2.基本概念/3.名字空间锁.html">
+            
+                <a href="../2.基本概念/3.名字空间锁.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    名字空间锁和解锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2.基本概念/4.租约-续约与吊销.html">
+            
+                <a href="../2.基本概念/4.租约-续约与吊销.html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    租约、续约以及吊销
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2.基本概念/5.身份验证.html">
+            
+                <a href="../2.基本概念/5.身份验证.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    身份验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2.基本概念/6.令牌.html">
+            
+                <a href="../2.基本概念/6.令牌.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    令牌
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../2.基本概念/7.身份.html">
+            
+                <a href="../2.基本概念/7.身份.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    身份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../2.基本概念/8.响应封装.html">
+            
+                <a href="../2.基本概念/8.响应封装.html">
+            
+                    
+                        <b>1.3.8.</b>
+                    
+                    响应封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../2.基本概念/9.策略.html">
+            
+                <a href="../2.基本概念/9.策略.html">
+            
+                    
+                        <b>1.3.9.</b>
+                    
+                    策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../2.基本概念/10.密码策略.html">
+            
+                <a href="../2.基本概念/10.密码策略.html">
+            
+                    
+                        <b>1.3.10.</b>
+                    
+                    密码策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../2.基本概念/11.用户名模板.html">
+            
+                <a href="../2.基本概念/11.用户名模板.html">
+            
+                    
+                        <b>1.3.11.</b>
+                    
+                    用户名模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../2.基本概念/12.高可用模式.html">
+            
+                <a href="../2.基本概念/12.高可用模式.html">
+            
+                    
+                        <b>1.3.12.</b>
+                    
+                    高可用模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../2.基本概念/13.存储.html">
+            
+                <a href="../2.基本概念/13.存储.html">
+            
+                    
+                        <b>1.3.13.</b>
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../2.基本概念/14.Vault集成存储.html">
+            
+                <a href="../2.基本概念/14.Vault集成存储.html">
+            
+                    
+                        <b>1.3.14.</b>
+                    
+                    Vault 集成存储(Integrated Storage)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../2.基本概念/15.Vault集成存储的自动驾驶功能.html">
+            
+                <a href="../2.基本概念/15.Vault集成存储的自动驾驶功能.html">
+            
+                    
+                        <b>1.3.15.</b>
+                    
+                    Vault 集成存储的自动驾驶功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../2.基本概念/16.使用PGP_GnuPG和Keybase.html">
+            
+                <a href="../2.基本概念/16.使用PGP_GnuPG和Keybase.html">
+            
+                    
+                        <b>1.3.16.</b>
+                    
+                    使用PGP、GnuPG和Keybase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../2.基本概念/17.恢复模式.html">
+            
+                <a href="../2.基本概念/17.恢复模式.html">
+            
+                    
+                        <b>1.3.17.</b>
+                    
+                    恢复模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../2.基本概念/18.资源配额.html">
+            
+                <a href="../2.基本概念/18.资源配额.html">
+            
+                    
+                        <b>1.3.18.</b>
+                    
+                    资源配额
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3.命令行/命令行.html">
+            
+                <a href="../3.命令行/命令行.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    命令行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3.命令行/1.agent.html">
+            
+                <a href="../3.命令行/1.agent.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3.命令行/2.audit.html">
+            
+                <a href="../3.命令行/2.audit.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    audit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../3.命令行/2.1.audit_disable.html">
+            
+                <a href="../3.命令行/2.1.audit_disable.html">
+            
+                    
+                        <b>1.4.2.1.</b>
+                    
+                    audit disable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../3.命令行/2.2.audit_enable.html">
+            
+                <a href="../3.命令行/2.2.audit_enable.html">
+            
+                    
+                        <b>1.4.2.2.</b>
+                    
+                    audit enable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../3.命令行/2.3.audit_list.html">
+            
+                <a href="../3.命令行/2.3.audit_list.html">
+            
+                    
+                        <b>1.4.2.3.</b>
+                    
+                    audit list
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3.命令行/3.auth.html">
+            
+                <a href="../3.命令行/3.auth.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    auth
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../3.命令行/3.1.auth_disable.html">
+            
+                <a href="../3.命令行/3.1.auth_disable.html">
+            
+                    
+                        <b>1.4.3.1.</b>
+                    
+                    auth disable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../3.命令行/3.2.auth_enable.html">
+            
+                <a href="../3.命令行/3.2.auth_enable.html">
+            
+                    
+                        <b>1.4.3.2.</b>
+                    
+                    auth enable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../3.命令行/3.3.auth_help.html">
+            
+                <a href="../3.命令行/3.3.auth_help.html">
+            
+                    
+                        <b>1.4.3.3.</b>
+                    
+                    auth help
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="../3.命令行/3.4.auth_list.html">
+            
+                <a href="../3.命令行/3.4.auth_list.html">
+            
+                    
+                        <b>1.4.3.4.</b>
+                    
+                    auth list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.5" data-path="../3.命令行/3.5.auth_tune.html">
+            
+                <a href="../3.命令行/3.5.auth_tune.html">
+            
+                    
+                        <b>1.4.3.5.</b>
+                    
+                    auth tune
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3.命令行/4.debug.html">
+            
+                <a href="../3.命令行/4.debug.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3.命令行/5.delete.html">
+            
+                <a href="../3.命令行/5.delete.html">
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    delete
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3.命令行/6.kv.html">
+            
+                <a href="../3.命令行/6.kv.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    kv
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../3.命令行/6.1.kv_delete.html">
+            
+                <a href="../3.命令行/6.1.kv_delete.html">
+            
+                    
+                        <b>1.4.6.1.</b>
+                    
+                    kv delete
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../3.命令行/6.2.kv_destroy.html">
+            
+                <a href="../3.命令行/6.2.kv_destroy.html">
+            
+                    
+                        <b>1.4.6.2.</b>
+                    
+                    kv destroy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../3.命令行/6.3.kv_enable-versioning.html">
+            
+                <a href="../3.命令行/6.3.kv_enable-versioning.html">
+            
+                    
+                        <b>1.4.6.3.</b>
+                    
+                    kv enable-versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.4" data-path="../3.命令行/6.4.kv_get.html">
+            
+                <a href="../3.命令行/6.4.kv_get.html">
+            
+                    
+                        <b>1.4.6.4.</b>
+                    
+                    kv get
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.5" data-path="../3.命令行/6.5.kv_list.html">
+            
+                <a href="../3.命令行/6.5.kv_list.html">
+            
+                    
+                        <b>1.4.6.5.</b>
+                    
+                    kv list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.6" data-path="../3.命令行/6.6.kv_metadata.html">
+            
+                <a href="../3.命令行/6.6.kv_metadata.html">
+            
+                    
+                        <b>1.4.6.6.</b>
+                    
+                    kv metadata
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.7" data-path="../3.命令行/6.7.kv_patch.html">
+            
+                <a href="../3.命令行/6.7.kv_patch.html">
+            
+                    
+                        <b>1.4.6.7.</b>
+                    
+                    kv patch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.8" data-path="../3.命令行/6.8.kv_put.html">
+            
+                <a href="../3.命令行/6.8.kv_put.html">
+            
+                    
+                        <b>1.4.6.8.</b>
+                    
+                    kv put
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.9" data-path="../3.命令行/6.9.kv_rollback.html">
+            
+                <a href="../3.命令行/6.9.kv_rollback.html">
+            
+                    
+                        <b>1.4.6.9.</b>
+                    
+                    kv rollback
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.10" data-path="../3.命令行/6.10.kv_undelete.html">
+            
+                <a href="../3.命令行/6.10.kv_undelete.html">
+            
+                    
+                        <b>1.4.6.10.</b>
+                    
+                    kv undelete
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3.命令行/7.lease.html">
+            
+                <a href="../3.命令行/7.lease.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    lease
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../3.命令行/7.1.lease_lookup.html">
+            
+                <a href="../3.命令行/7.1.lease_lookup.html">
+            
+                    
+                        <b>1.4.7.1.</b>
+                    
+                    lease lookup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../3.命令行/7.2.lease_renew.html">
+            
+                <a href="../3.命令行/7.2.lease_renew.html">
+            
+                    
+                        <b>1.4.7.2.</b>
+                    
+                    lease renew
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../3.命令行/7.3.lease_revoke.html">
+            
+                <a href="../3.命令行/7.3.lease_revoke.html">
+            
+                    
+                        <b>1.4.7.3.</b>
+                    
+                    lease revoke
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3.命令行/8.list.html">
+            
+                <a href="../3.命令行/8.list.html">
+            
+                    
+                        <b>1.4.8.</b>
+                    
+                    list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../3.命令行/9.login.html">
+            
+                <a href="../3.命令行/9.login.html">
+            
+                    
+                        <b>1.4.9.</b>
+                    
+                    login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../3.命令行/10.monitor.html">
+            
+                <a href="../3.命令行/10.monitor.html">
+            
+                    
+                        <b>1.4.10.</b>
+                    
+                    monitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../3.命令行/11.namespace.html">
+            
+                <a href="../3.命令行/11.namespace.html">
+            
+                    
+                        <b>1.4.11.</b>
+                    
+                    namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../3.命令行/12.operator.html">
+            
+                <a href="../3.命令行/12.operator.html">
+            
+                    
+                        <b>1.4.12.</b>
+                    
+                    operator
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../3.命令行/12.1.operator_diagnose.html">
+            
+                <a href="../3.命令行/12.1.operator_diagnose.html">
+            
+                    
+                        <b>1.4.12.1.</b>
+                    
+                    operator diagnose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.2" data-path="../3.命令行/12.2.operator_generate-root.html">
+            
+                <a href="../3.命令行/12.2.operator_generate-root.html">
+            
+                    
+                        <b>1.4.12.2.</b>
+                    
+                    operator generate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.3" data-path="../3.命令行/12.3.operator_init.html">
+            
+                <a href="../3.命令行/12.3.operator_init.html">
+            
+                    
+                        <b>1.4.12.3.</b>
+                    
+                    operator init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.4" data-path="../3.命令行/12.4.operator_key-status.html">
+            
+                <a href="../3.命令行/12.4.operator_key-status.html">
+            
+                    
+                        <b>1.4.12.4.</b>
+                    
+                    operator key-status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.5" data-path="../3.命令行/12.5.operator_migrate.html">
+            
+                <a href="../3.命令行/12.5.operator_migrate.html">
+            
+                    
+                        <b>1.4.12.5.</b>
+                    
+                    operator migrate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.6" data-path="../3.命令行/12.6.operator_raft.html">
+            
+                <a href="../3.命令行/12.6.operator_raft.html">
+            
+                    
+                        <b>1.4.12.6.</b>
+                    
+                    operator raft
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.7" data-path="../3.命令行/12.7.operator_rekey.html">
+            
+                <a href="../3.命令行/12.7.operator_rekey.html">
+            
+                    
+                        <b>1.4.12.7.</b>
+                    
+                    opeartor rekey
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.8" data-path="../3.命令行/12.8.operator_rotate.html">
+            
+                <a href="../3.命令行/12.8.operator_rotate.html">
+            
+                    
+                        <b>1.4.12.8.</b>
+                    
+                    operator rotate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.9" data-path="../3.命令行/12.9.operator_seal.html">
+            
+                <a href="../3.命令行/12.9.operator_seal.html">
+            
+                    
+                        <b>1.4.12.9.</b>
+                    
+                    operator seal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.10" data-path="../3.命令行/12.10.operator_step-down.html">
+            
+                <a href="../3.命令行/12.10.operator_step-down.html">
+            
+                    
+                        <b>1.4.12.10.</b>
+                    
+                    operator step-down
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.11" data-path="../3.命令行/12.11.operator_unseal.html">
+            
+                <a href="../3.命令行/12.11.operator_unseal.html">
+            
+                    
+                        <b>1.4.12.11.</b>
+                    
+                    operator unseal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.12" data-path="../3.命令行/12.12.operator_usage.html">
+            
+                <a href="../3.命令行/12.12.operator_usage.html">
+            
+                    
+                        <b>1.4.12.12.</b>
+                    
+                    operator usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../3.命令行/13.path-help.html">
+            
+                <a href="../3.命令行/13.path-help.html">
+            
+                    
+                        <b>1.4.13.</b>
+                    
+                    path-help
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../3.命令行/14.plugin.html">
+            
+                <a href="../3.命令行/14.plugin.html">
+            
+                    
+                        <b>1.4.14.</b>
+                    
+                    plugin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.14.1" data-path="../3.命令行/14.1.plugin_deregister.html">
+            
+                <a href="../3.命令行/14.1.plugin_deregister.html">
+            
+                    
+                        <b>1.4.14.1.</b>
+                    
+                    plugin deregister
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.2" data-path="../3.命令行/14.2.plugin_info.html">
+            
+                <a href="../3.命令行/14.2.plugin_info.html">
+            
+                    
+                        <b>1.4.14.2.</b>
+                    
+                    plugin info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.3" data-path="../3.命令行/14.3.plugin_list.html">
+            
+                <a href="../3.命令行/14.3.plugin_list.html">
+            
+                    
+                        <b>1.4.14.3.</b>
+                    
+                    plugin list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.4" data-path="../3.命令行/14.4.plugin_register.html">
+            
+                <a href="../3.命令行/14.4.plugin_register.html">
+            
+                    
+                        <b>1.4.14.4.</b>
+                    
+                    plugin register
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.5" data-path="../3.命令行/14.5.plugin_reload.html">
+            
+                <a href="../3.命令行/14.5.plugin_reload.html">
+            
+                    
+                        <b>1.4.14.5.</b>
+                    
+                    plugin reload
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../3.命令行/15.policy.html">
+            
+                <a href="../3.命令行/15.policy.html">
+            
+                    
+                        <b>1.4.15.</b>
+                    
+                    policy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.1" data-path="../3.命令行/15.1.policy_delete.html">
+            
+                <a href="../3.命令行/15.1.policy_delete.html">
+            
+                    
+                        <b>1.4.15.1.</b>
+                    
+                    policy delete
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.2" data-path="../3.命令行/15.2.policy_fmt.html">
+            
+                <a href="../3.命令行/15.2.policy_fmt.html">
+            
+                    
+                        <b>1.4.15.2.</b>
+                    
+                    policy fmt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3" data-path="../3.命令行/15.3.policy_list.html">
+            
+                <a href="../3.命令行/15.3.policy_list.html">
+            
+                    
+                        <b>1.4.15.3.</b>
+                    
+                    policy list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4" data-path="../3.命令行/15.4.policy_read.html">
+            
+                <a href="../3.命令行/15.4.policy_read.html">
+            
+                    
+                        <b>1.4.15.4.</b>
+                    
+                    policy read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.5" data-path="../3.命令行/15.5.policy_write.html">
+            
+                <a href="../3.命令行/15.5.policy_write.html">
+            
+                    
+                        <b>1.4.15.5.</b>
+                    
+                    policy write
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../3.命令行/16.read.html">
+            
+                <a href="../3.命令行/16.read.html">
+            
+                    
+                        <b>1.4.16.</b>
+                    
+                    read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../3.命令行/17.secrets.html">
+            
+                <a href="../3.命令行/17.secrets.html">
+            
+                    
+                        <b>1.4.17.</b>
+                    
+                    secrets
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" data-path="../3.命令行/17.1.secrets_disable.html">
+            
+                <a href="../3.命令行/17.1.secrets_disable.html">
+            
+                    
+                        <b>1.4.17.1.</b>
+                    
+                    secrets disable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" data-path="../3.命令行/17.2.secrets_enable.html">
+            
+                <a href="../3.命令行/17.2.secrets_enable.html">
+            
+                    
+                        <b>1.4.17.2.</b>
+                    
+                    secrets enable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" data-path="../3.命令行/17.3.secrets_list.html">
+            
+                <a href="../3.命令行/17.3.secrets_list.html">
+            
+                    
+                        <b>1.4.17.3.</b>
+                    
+                    secrets list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" data-path="../3.命令行/17.4.secrets_move.html">
+            
+                <a href="../3.命令行/17.4.secrets_move.html">
+            
+                    
+                        <b>1.4.17.4.</b>
+                    
+                    secrets move
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.5" data-path="../3.命令行/17.5.secrets_tune.html">
+            
+                <a href="../3.命令行/17.5.secrets_tune.html">
+            
+                    
+                        <b>1.4.17.5.</b>
+                    
+                    secrets tune
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../3.命令行/18.server.html">
+            
+                <a href="../3.命令行/18.server.html">
+            
+                    
+                        <b>1.4.18.</b>
+                    
+                    server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../3.命令行/19.ssh.html">
+            
+                <a href="../3.命令行/19.ssh.html">
+            
+                    
+                        <b>1.4.19.</b>
+                    
+                    ssh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../3.命令行/20.status.html">
+            
+                <a href="../3.命令行/20.status.html">
+            
+                    
+                        <b>1.4.20.</b>
+                    
+                    status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../3.命令行/21.token.html">
+            
+                <a href="../3.命令行/21.token.html">
+            
+                    
+                        <b>1.4.21.</b>
+                    
+                    token
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.21.1" data-path="../3.命令行/21.1.token_capabilities.html">
+            
+                <a href="../3.命令行/21.1.token_capabilities.html">
+            
+                    
+                        <b>1.4.21.1.</b>
+                    
+                    token capabilities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21.2" data-path="../3.命令行/21.2.token_create.html">
+            
+                <a href="../3.命令行/21.2.token_create.html">
+            
+                    
+                        <b>1.4.21.2.</b>
+                    
+                    token create
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21.3" data-path="../3.命令行/21.3.token_lookup.html">
+            
+                <a href="../3.命令行/21.3.token_lookup.html">
+            
+                    
+                        <b>1.4.21.3.</b>
+                    
+                    token lookup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21.4" data-path="../3.命令行/21.4.token_renew.html">
+            
+                <a href="../3.命令行/21.4.token_renew.html">
+            
+                    
+                        <b>1.4.21.4.</b>
+                    
+                    token renew
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21.5" data-path="../3.命令行/21.5.token_revoke.html">
+            
+                <a href="../3.命令行/21.5.token_revoke.html">
+            
+                    
+                        <b>1.4.21.5.</b>
+                    
+                    token revoke
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../3.命令行/22.unwrap.html">
+            
+                <a href="../3.命令行/22.unwrap.html">
+            
+                    
+                        <b>1.4.22.</b>
+                    
+                    unwrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../3.命令行/23.version.html">
+            
+                <a href="../3.命令行/23.version.html">
+            
+                    
+                        <b>1.4.23.</b>
+                    
+                    version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../3.命令行/24.write.html">
+            
+                <a href="../3.命令行/24.write.html">
+            
+                    
+                        <b>1.4.24.</b>
+                    
+                    write
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="1.listener.html">
+            
+                <a href="1.listener.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    listener
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="1.1.listener_tcp.html">
+            
+                <a href="1.1.listener_tcp.html">
+            
+                    
+                        <b>1.5.1.1.</b>
+                    
+                    tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="2.replication.html">
+            
+                <a href="2.replication.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3.seal.html">
+            
+                <a href="3.seal.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    seal
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="3.1.seal_AliCloud.html">
+            
+                <a href="3.1.seal_AliCloud.html">
+            
+                    
+                        <b>1.5.3.1.</b>
+                    
+                    AliCloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="3.2.seal_AWS.html">
+            
+                <a href="3.2.seal_AWS.html">
+            
+                    
+                        <b>1.5.3.2.</b>
+                    
+                    AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="3.3.seal_Azure.html">
+            
+                <a href="3.3.seal_Azure.html">
+            
+                    
+                        <b>1.5.3.3.</b>
+                    
+                    Azure Key Valut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="3.4.seal_transit.html">
+            
+                <a href="3.4.seal_transit.html">
+            
+                    
+                        <b>1.5.3.4.</b>
+                    
+                    Vault Transit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4.service_registration.html">
+            
+                <a href="4.service_registration.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    service_registration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="4.1.consul_service_registration.html">
+            
+                <a href="4.1.consul_service_registration.html">
+            
+                    
+                        <b>1.5.4.1.</b>
+                    
+                    Consul
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="4.2.k8s_service_registration.html">
+            
+                <a href="4.2.k8s_service_registration.html">
+            
+                    
+                        <b>1.5.4.2.</b>
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="5.storage.html">
+            
+                <a href="5.storage.html">
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    storage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="5.1.storage_AlicloudOss.html">
+            
+                <a href="5.1.storage_AlicloudOss.html">
+            
+                    
+                        <b>1.5.5.1.</b>
+                    
+                    Alicloud OSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="5.2.storage_Azure.html">
+            
+                <a href="5.2.storage_Azure.html">
+            
+                    
+                        <b>1.5.5.2.</b>
+                    
+                    Azure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="5.3.storage_consul.html">
+            
+                <a href="5.3.storage_consul.html">
+            
+                    
+                        <b>1.5.5.3.</b>
+                    
+                    Consul
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="5.4.storage_dynamodb.html">
+            
+                <a href="5.4.storage_dynamodb.html">
+            
+                    
+                        <b>1.5.5.4.</b>
+                    
+                    DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="5.5.storage_etcd.html">
+            
+                <a href="5.5.storage_etcd.html">
+            
+                    
+                        <b>1.5.5.5.</b>
+                    
+                    Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5.6" data-path="5.6.storage_filesystem.html">
+            
+                <a href="5.6.storage_filesystem.html">
+            
+                    
+                        <b>1.5.5.6.</b>
+                    
+                    Filesystem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="5.7.storage_inmem.html">
+            
+                <a href="5.7.storage_inmem.html">
+            
+                    
+                        <b>1.5.5.7.</b>
+                    
+                    In-Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.8" data-path="5.8.storage_mssql.html">
+            
+                <a href="5.8.storage_mssql.html">
+            
+                    
+                        <b>1.5.5.8.</b>
+                    
+                    MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9" data-path="5.9.storage_mysql.html">
+            
+                <a href="5.9.storage_mysql.html">
+            
+                    
+                        <b>1.5.5.9.</b>
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.10" data-path="5.10.storage_postgres.html">
+            
+                <a href="5.10.storage_postgres.html">
+            
+                    
+                        <b>1.5.5.10.</b>
+                    
+                    PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11" data-path="5.11.storage_raft.html">
+            
+                <a href="5.11.storage_raft.html">
+            
+                    
+                        <b>1.5.5.11.</b>
+                    
+                    Integrated Storage(Raft)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12" data-path="5.12.storage_s3.html">
+            
+                <a href="5.12.storage_s3.html">
+            
+                    
+                        <b>1.5.5.12.</b>
+                    
+                    S3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="6.telemetry.html">
+            
+                <a href="6.telemetry.html">
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    telemetry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="7.ui.html">
+            
+                <a href="7.ui.html">
+            
+                    
+                        <b>1.5.7.</b>
+                    
+                    ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5.身份验证方法/身份验证方法.html">
+            
+                <a href="../5.身份验证方法/身份验证方法.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    身份验证方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5.身份验证方法/1.AppRole.html">
+            
+                <a href="../5.身份验证方法/1.AppRole.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    AppRole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../5.身份验证方法/2.GitHub.html">
+            
+                <a href="../5.身份验证方法/2.GitHub.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../5.身份验证方法/3.Token.html">
+            
+                <a href="../5.身份验证方法/3.Token.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../5.身份验证方法/4.Userpass.html">
+            
+                <a href="../5.身份验证方法/4.Userpass.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    用户名密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6.机密引擎/机密引擎.html">
+            
+                <a href="../6.机密引擎/机密引擎.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    机密引擎
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6.机密引擎/1.AliCloud.html">
+            
+                <a href="../6.机密引擎/1.AliCloud.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    AliCloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6.机密引擎/2.AWS.html">
+            
+                <a href="../6.机密引擎/2.AWS.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6.机密引擎/3.Azure.html">
+            
+                <a href="../6.机密引擎/3.Azure.html">
+            
+                    
+                        <b>1.7.3.</b>
+                    
+                    Azure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../6.机密引擎/4.Consul.html">
+            
+                <a href="../6.机密引擎/4.Consul.html">
+            
+                    
+                        <b>1.7.4.</b>
+                    
+                    Consul
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../6.机密引擎/5.Cubbyhole.html">
+            
+                <a href="../6.机密引擎/5.Cubbyhole.html">
+            
+                    
+                        <b>1.7.5.</b>
+                    
+                    Cubbyhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../6.机密引擎/6.Database.html">
+            
+                <a href="../6.机密引擎/6.Database.html">
+            
+                    
+                        <b>1.7.6.</b>
+                    
+                    Database
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.6.1" data-path="../6.机密引擎/6.1.Database_ElasticSearch.html">
+            
+                <a href="../6.机密引擎/6.1.Database_ElasticSearch.html">
+            
+                    
+                        <b>1.7.6.1.</b>
+                    
+                    Elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6.2" data-path="../6.机密引擎/6.2.Database_MongoDB.html">
+            
+                <a href="../6.机密引擎/6.2.Database_MongoDB.html">
+            
+                    
+                        <b>1.7.6.2.</b>
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6.3" data-path="../6.机密引擎/6.3.Database_MSSQL.html">
+            
+                <a href="../6.机密引擎/6.3.Database_MSSQL.html">
+            
+                    
+                        <b>1.7.6.3.</b>
+                    
+                    MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6.4" data-path="../6.机密引擎/6.4.Database_MYSQL.html">
+            
+                <a href="../6.机密引擎/6.4.Database_MYSQL.html">
+            
+                    
+                        <b>1.7.6.4.</b>
+                    
+                    MySQL/MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6.5" data-path="../6.机密引擎/6.5.Database_Postgres.html">
+            
+                <a href="../6.机密引擎/6.5.Database_Postgres.html">
+            
+                    
+                        <b>1.7.6.5.</b>
+                    
+                    PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../6.机密引擎/7.KV.html">
+            
+                <a href="../6.机密引擎/7.KV.html">
+            
+                    
+                        <b>1.7.7.</b>
+                    
+                    Key / Value
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.7.1" data-path="../6.机密引擎/7.1.KV_v1.html">
+            
+                <a href="../6.机密引擎/7.1.KV_v1.html">
+            
+                    
+                        <b>1.7.7.1.</b>
+                    
+                    Key / Value v1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7.2" data-path="../6.机密引擎/7.2.KV_v2.html">
+            
+                <a href="../6.机密引擎/7.2.KV_v2.html">
+            
+                    
+                        <b>1.7.7.2.</b>
+                    
+                    Key / Value v2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../6.机密引擎/8.RabbitMQ.html">
+            
+                <a href="../6.机密引擎/8.RabbitMQ.html">
+            
+                    
+                        <b>1.7.8.</b>
+                    
+                    RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../6.机密引擎/9.SSH.html">
+            
+                <a href="../6.机密引擎/9.SSH.html">
+            
+                    
+                        <b>1.7.9.</b>
+                    
+                    SSH
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.9.1" data-path="../6.机密引擎/9.1.SSH_SignedCertificates.html">
+            
+                <a href="../6.机密引擎/9.1.SSH_SignedCertificates.html">
+            
+                    
+                        <b>1.7.9.1.</b>
+                    
+                    签名的证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9.2" data-path="../6.机密引擎/9.2.SSH_OTP.html">
+            
+                <a href="../6.机密引擎/9.2.SSH_OTP.html">
+            
+                    
+                        <b>1.7.9.2.</b>
+                    
+                    一次性 SSH 密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../6.机密引擎/10.Transit.html">
+            
+                <a href="../6.机密引擎/10.Transit.html">
+            
+                    
+                        <b>1.7.10.</b>
+                    
+                    Transit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    [Vault Agent]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../8.审计设备/审计设备.html">
+            
+                <a href="../8.审计设备/审计设备.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    审计设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../8.审计设备/1.file.html">
+            
+                <a href="../8.审计设备/1.file.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../8.审计设备/2.syslog.html">
+            
+                <a href="../8.审计设备/2.syslog.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    Syslog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../8.审计设备/3.socket.html">
+            
+                <a href="../8.审计设备/3.socket.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    Socket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../9.实际案例/overview.html">
+            
+                <a href="../9.实际案例/overview.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    实际案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../9.实际案例/1.加密即服务.html">
+            
+                <a href="../9.实际案例/1.加密即服务.html">
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    加密即服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../9.实际案例/2.使用vault提供可搜索的密文.html">
+            
+                <a href="../9.实际案例/2.使用vault提供可搜索的密文.html">
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    使用 Vault 提供可搜索的密文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../9.实际案例/3.vault_consul_secret_in_env_win.html">
+            
+                <a href="../9.实际案例/3.vault_consul_secret_in_env_win.html">
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    用Vault 与 Consul-Template 管理 Windows 环境变量中的机密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../9.实际案例/4.ssh_otp.html">
+            
+                <a href="../9.实际案例/4.ssh_otp.html">
+            
+                    
+                        <b>1.10.4.</b>
+                    
+                    配置使用一次性密码登录 SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../9.实际案例/5.routate_db_root_credential.html">
+            
+                <a href="../9.实际案例/5.routate_db_root_credential.html">
+            
+                    
+                        <b>1.10.5.</b>
+                    
+                    轮换数据库根凭证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../9.实际案例/6.postgres_dynamic_secrets.html">
+            
+                <a href="../9.实际案例/6.postgres_dynamic_secrets.html">
+            
+                    
+                        <b>1.10.6.</b>
+                    
+                    生成动态数据库凭证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../9.实际案例/7.production-hardening.html">
+            
+                <a href="../9.实际案例/7.production-hardening.html">
+            
+                    
+                        <b>1.10.7.</b>
+                    
+                    生产环境的安全加固
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../9.实际案例/8.entities_groups.html">
+            
+                <a href="../9.实际案例/8.entities_groups.html">
+            
+                    
+                        <b>1.10.8.</b>
+                    
+                    身份：实体与组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../9.实际案例/9.Cubbyhole.html">
+            
+                <a href="../9.实际案例/9.Cubbyhole.html">
+            
+                    
+                        <b>1.10.9.</b>
+                    
+                    Cubbyhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                        <b>1.11.</b>
+                    
+                    后记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../10.后记/1.关于翻译.html">
+            
+                <a href="../10.后记/1.关于翻译.html">
+            
+                    
+                        <b>1.11.1.</b>
+                    
+                    后记 1 —— 翻译本书的心路历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../10.后记/2.云与安全.html">
+            
+                <a href="../10.后记/2.云与安全.html">
+            
+                    
+                        <b>1.11.2.</b>
+                    
+                    后记 2 —— 云与安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../10.后记/3.中国云计算的革命尚未开始.html">
+            
+                <a href="../10.后记/3.中国云计算的革命尚未开始.html">
+            
+                    
+                        <b>1.11.3.</b>
+                    
+                    后记 3 —— 中国云计算的革命尚未开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../10.后记/4.加拉帕戈斯云上不会有千里马.html">
+            
+                <a href="../10.后记/4.加拉帕戈斯云上不会有千里马.html">
+            
+                    
+                        <b>1.11.4.</b>
+                    
+                    后记 4 —— 加拉帕戈斯云上不会有千里马
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../10.后记/5.致谢.html">
+            
+                <a href="../10.后记/5.致谢.html">
+            
+                    
+                        <b>1.11.5.</b>
+                    
+                    后记 5 —— 致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Filesystem</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="filesystem-&#x5B58;&#x50A8;&#x540E;&#x7AEF;">Filesystem &#x5B58;&#x50A8;&#x540E;&#x7AEF;</h1>
+<p>Filesystem &#x5B58;&#x50A8;&#x540E;&#x7AEF;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5C06; Vault &#x7684;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5230;&#x6807;&#x51C6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x3002;&#x8BE5;&#x540E;&#x7AEF;&#x53EF;&#x7528;&#x4E8E;&#x5355;&#x673A;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x573A;&#x666F;&#xFF0C;&#x6216;&#x662F;&#x7528;&#x4F5C;&#x975E;&#x5173;&#x952E;&#x7684;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<ul>
+<li><strong>&#x65E0;&#x9AD8;&#x53EF;&#x7528;&#x96C6;&#x7FA4;&#x652F;&#x6301;</strong> &#x2014;&#x2014; Filesystem &#x5B58;&#x50A8;&#x540E;&#x7AEF;&#x4E0D;&#x652F;&#x6301;&#x9AD8;&#x53EF;&#x7528;&#x96C6;&#x7FA4;&#x3002;</li>
+<li><strong>HashiCorp &#x5B98;&#x65B9;&#x652F;&#x6301;</strong> &#x2014;&#x2014; HashiCorp &#x63D0;&#x4F9B;&#x5BF9; Filesystem &#x5B58;&#x50A8;&#x540E;&#x7AEF;&#x7684;&#x5B98;&#x65B9;&#x652F;&#x6301;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-hcl">storage <span class="token string">&quot;file&quot;</span> <span class="token punctuation">{</span>
+  <span class="token property">path</span> <span class="token punctuation">=</span> <span class="token string">&quot;/mnt/vault/data&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5C3D;&#x7BA1; Vault &#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x52A0;&#x5BC6;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x91C7;&#x53D6;&#x5408;&#x9002;&#x7684;&#x63AA;&#x65BD;&#x6765;&#x9650;&#x5236;&#x5BF9;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;</p>
+<h2 id="file-&#x53C2;&#x6570;"><code>file</code> &#x53C2;&#x6570;</h2>
+<ul>
+<li><code>path</code> <code>(string: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rrequired</span><span class="token punctuation">&gt;</span></span>)</code> - &#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x76EE;&#x5F55;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;Vault &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x3002;</li>
+</ul>
+<h2 id="file-&#x4F8B;&#x5B50;"><code>file</code> &#x4F8B;&#x5B50;</h2>
+<p>&#x8BE5;&#x4F8B;&#x5B50;&#x6F14;&#x793A;&#x4E86;&#x5C06;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728; <code>/mnt/vault/data</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-hcl">storage <span class="token string">&quot;file&quot;</span> <span class="token punctuation">{</span>
+  <span class="token property">path</span> <span class="token punctuation">=</span> <span class="token string">&quot;/mnt/vault/data&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5.5.storage_etcd.html" class="navigation navigation-prev " aria-label="Previous page: Etcd">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5.7.storage_inmem.html" class="navigation navigation-next " aria-label="Next page: In-Memory">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Filesystem","level":"1.5.5.6","depth":3,"next":{"title":"In-Memory","level":"1.5.5.7","depth":3,"path":"4.配置文件/5.7.storage_inmem.md","ref":"4.配置文件/5.7.storage_inmem.md","articles":[]},"previous":{"title":"Etcd","level":"1.5.5.5","depth":3,"path":"4.配置文件/5.5.storage_etcd.md","ref":"4.配置文件/5.5.storage_etcd.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-highlight","prism","prism-themes","fontsettings","sharing","-lunr","-search","search-pro","livereload","image-captions","sitemap-general"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-vsc-dark-plus.css"],"lang":{"shell":"bash","cmd":"bash"}},"livereload":{},"search-pro":{},"sitemap-general":{"prefix":"https://lonegunmanb.github.io/essential-vault/"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"prism-themes":{},"sharing":{"all":["facebook","google","instapaper","twitter","weibo"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"image-captions":{"caption":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"大可不加冰","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: HashiStack","alt":"HashiStack","nro":1,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/Full%20Stack_onBlack%402x.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"HashiStack","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"index.html#fig1.1.2","level":"1.1","list_caption":"Figure: 马奇诺防线示意图","alt":"马奇诺防线示意图","nro":2,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211230122032.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"马奇诺防线示意图","attributes":{},"skip":false,"key":"1.1.2"},{"backlink":"1.什么是vault/2.什么是vault.html#fig1.2.2.1","level":"1.2.2","list_caption":"Figure: Vault 新建的用户","alt":"Vault 新建的用户","nro":3,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227102513.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Vault 新建的用户","attributes":{},"skip":false,"key":"1.2.2.1"},{"backlink":"1.什么是vault/2.什么是vault.html#fig1.2.2.2","level":"1.2.2","list_caption":"Figure: iam 用户被删除了","alt":"iam 用户被删除了","nro":4,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227102309.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"iam 用户被删除了","attributes":{},"skip":false,"key":"1.2.2.2"},{"backlink":"1.什么是vault/5.启动标准的Vault服务.html#fig1.2.5.1","level":"1.2.5","list_caption":"Figure: 使用 Consul 组网的 Vault 集群","alt":"使用 Consul 组网的 Vault 集群","nro":5,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227095035.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"使用 Consul 组网的 Vault 集群","attributes":{},"skip":false,"key":"1.2.5.1"},{"backlink":"1.什么是vault/5.启动标准的Vault服务.html#fig1.2.5.2","level":"1.2.5","list_caption":"Figure: Vault 保存 Master Key 的机制","alt":"Vault 保存 Master Key 的机制","nro":6,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227095325.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Vault 保存 Master Key 的机制","attributes":{},"skip":false,"key":"1.2.5.2"},{"backlink":"1.什么是vault/6.Vault的架构.html#fig1.2.6.1","level":"1.2.6","list_caption":"Figure: Vault服务架构","alt":"Vault服务架构","nro":7,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1616989467747-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Vault服务架构","attributes":{},"skip":false,"key":"1.2.6.1"},{"backlink":"1.什么是vault/6.Vault的架构.html#fig1.2.6.2","level":"1.2.6","list_caption":"Figure: 使用Shamir算法拆分的主密钥，由主密钥加密的加密密钥","alt":"使用Shamir算法拆分的主密钥，由主密钥加密的加密密钥","nro":8,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1616992699734-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"使用Shamir算法拆分的主密钥，由主密钥加密的加密密钥","attributes":{},"skip":false,"key":"1.2.6.2"},{"backlink":"2.基本概念/2.封印与解封.html#fig1.3.2.1","level":"1.3.2","list_caption":"Figure: 使用 Shamir 算法解封的过程","alt":"使用 Shamir 算法解封的过程","nro":9,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227113930.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"使用 Shamir 算法解封的过程","attributes":{},"skip":false,"key":"1.3.2.1"},{"backlink":"2.基本概念/2.封印与解封.html#fig1.3.2.2","level":"1.3.2","list_caption":"Figure: 自动解封机制","alt":"自动解封机制","nro":10,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227142444.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"自动解封机制","attributes":{},"skip":false,"key":"1.3.2.2"},{"backlink":"2.基本概念/7.身份.html#fig1.3.7.1","level":"1.3.7","list_caption":"Figure: 映射到同一个实体的两个别名，类型分别是 LDAP 和 Github","alt":"映射到同一个实体的两个别名，类型分别是 LDAP 和 Github","nro":11,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227212819.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"映射到同一个实体的两个别名，类型分别是 LDAP 和 Github","attributes":{},"skip":false,"key":"1.3.7.1"},{"backlink":"2.基本概念/7.身份.html#fig1.3.7.2","level":"1.3.7","list_caption":"Figure: 有效的同类型别名映射","alt":"有效的同类型别名映射","nro":12,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227213036.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"有效的同类型别名映射","attributes":{},"skip":false,"key":"1.3.7.2"},{"backlink":"2.基本概念/7.身份.html#fig1.3.7.3","level":"1.3.7","list_caption":"Figure: 无效的同类型别名映射","alt":"无效的同类型别名映射","nro":13,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227213104.png","index":3,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"无效的同类型别名映射","attributes":{},"skip":false,"key":"1.3.7.3"},{"backlink":"2.基本概念/7.身份.html#fig1.3.7.4","level":"1.3.7","list_caption":"Figure: 实体策略被添加到令牌上的过程","alt":"实体策略被添加到令牌上的过程","nro":14,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227213822.png","index":4,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"实体策略被添加到令牌上的过程","attributes":{},"skip":false,"key":"1.3.7.4"},{"backlink":"2.基本概念/7.身份.html#fig1.3.7.5","level":"1.3.7","list_caption":"Figure: 包含身份组策略的实体策略计算结果","alt":"包含身份组策略的实体策略计算结果","nro":15,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211227233441.png","index":5,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"包含身份组策略的实体策略计算结果","attributes":{},"skip":false,"key":"1.3.7.5"},{"backlink":"2.基本概念/9.策略.html#fig1.3.9.1","level":"1.3.9","list_caption":"Figure: LDAP 映射 Vault 策略的流程","alt":"LDAP 映射 Vault 策略的流程","nro":16,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1617071783177-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"LDAP 映射 Vault 策略的流程","attributes":{},"skip":false,"key":"1.3.9.1"},{"backlink":"2.基本概念/9.策略.html#fig1.3.9.2","level":"1.3.9","list_caption":"Figure: LDAP 认证登录 Vault","alt":"LDAP 认证登录 Vault","nro":17,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1617072900456-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"LDAP 认证登录 Vault","attributes":{},"skip":false,"key":"1.3.9.2"},{"backlink":"2.基本概念/10.密码策略.html#fig1.3.10.1","level":"1.3.10","list_caption":"Figure: 生成候选密码的状态机","alt":"生成候选密码的状态机","nro":18,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211228160926.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"生成候选密码的状态机","attributes":{},"skip":false,"key":"1.3.10.1"},{"backlink":"2.基本概念/10.密码策略.html#fig1.3.10.2","level":"1.3.10","list_caption":"Figure: 不同规则生成密码的性能曲线","alt":"不同规则生成密码的性能曲线","nro":19,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211228151729.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"不同规则生成密码的性能曲线","attributes":{},"skip":false,"key":"1.3.10.2"},{"backlink":"2.基本概念/10.密码策略.html#fig1.3.10.3","level":"1.3.10","list_caption":"Figure: 大小写字母加数字字符集的合法概率","alt":"大小写字母加数字字符集的合法概率","nro":20,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211228153607.png","index":3,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"大小写字母加数字字符集的合法概率","attributes":{},"skip":false,"key":"1.3.10.3"},{"backlink":"2.基本概念/14.Vault集成存储.html#fig1.3.14.1","level":"1.3.14","list_caption":"Figure: 新节点加入集群的时序图","alt":"新节点加入集群的时序图","nro":21,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20211229143904.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"新节点加入集群的时序图","attributes":{},"skip":false,"key":"1.3.14.1"},{"backlink":"6.机密引擎/机密引擎.html#fig1.7.1","level":"1.7","list_caption":"Figure: Vault 支持种类丰富的机密引擎","alt":"Vault 支持种类丰富的机密引擎","nro":22,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220117224337.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Vault 支持种类丰富的机密引擎","attributes":{},"skip":false,"key":"1.7.1"},{"backlink":"9.实际案例/1.加密即服务.html#fig1.10.1.1","level":"1.10.1","list_caption":"Figure: 调用Vault加解密数据流程","alt":"调用Vault加解密数据流程","nro":23,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-3-16/1615865424480-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"调用Vault加解密数据流程","attributes":{},"skip":false,"key":"1.10.1.1"},{"backlink":"9.实际案例/1.加密即服务.html#fig1.10.1.2","level":"1.10.1","list_caption":"Figure: 用Root用户创建一个App用户，并为其配置使用密钥加解密的权限","alt":"用Root用户创建一个App用户，并为其配置使用密钥加解密的权限","nro":24,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1615877113070-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"用Root用户创建一个App用户，并为其配置使用密钥加解密的权限","attributes":{},"skip":false,"key":"1.10.1.2"},{"backlink":"9.实际案例/2.使用vault提供可搜索的密文.html#fig1.10.2.1","level":"1.10.2","list_caption":"Figure: Vault高级数据保护功能","alt":"Vault高级数据保护功能","nro":25,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1623556184012-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Vault高级数据保护功能","attributes":{},"skip":false,"key":"1.10.2.1"},{"backlink":"9.实际案例/2.使用vault提供可搜索的密文.html#fig1.10.2.2","level":"1.10.2","list_caption":"Figure: 静态存储加密","alt":"静态存储加密","nro":26,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1623556895427-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"静态存储加密","attributes":{},"skip":false,"key":"1.10.2.2"},{"backlink":"9.实际案例/2.使用vault提供可搜索的密文.html#fig1.10.2.3","level":"1.10.2","list_caption":"Figure: 传输中加密","alt":"传输中加密","nro":27,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1623566074261-image.png","index":3,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"传输中加密","attributes":{},"skip":false,"key":"1.10.2.3"},{"backlink":"9.实际案例/3.vault_consul_secret_in_env_win.html#fig1.10.3.1","level":"1.10.3","list_caption":"Figure: Azure Active Directory 的 App registrations 可以看到 Vault 创建的账号","alt":"Azure Active Directory 的 App registrations 可以看到 Vault 创建的账号","nro":28,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1636272151939-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Azure Active Directory 的 App registrations 可以看到 Vault 创建的账号","attributes":{},"skip":false,"key":"1.10.3.1"},{"backlink":"9.实际案例/3.vault_consul_secret_in_env_win.html#fig1.10.3.2","level":"1.10.3","list_caption":"Figure: 环境变量已被正确设置","alt":"环境变量已被正确设置","nro":29,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1636270441852-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"环境变量已被正确设置","attributes":{},"skip":false,"key":"1.10.3.2"},{"backlink":"9.实际案例/4.ssh_otp.html#fig1.10.4.1","level":"1.10.4","list_caption":"Figure: Vault SSH OTP 工作原理","alt":"Vault SSH OTP 工作原理","nro":30,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220130124641.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Vault SSH OTP 工作原理","attributes":{},"skip":false,"key":"1.10.4.1"},{"backlink":"9.实际案例/5.routate_db_root_credential.html#fig1.10.5.1","level":"1.10.5","list_caption":"Figure: 轮换数据库根凭据流程","alt":"轮换数据库根凭据流程","nro":31,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220130220257.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"轮换数据库根凭据流程","attributes":{},"skip":false,"key":"1.10.5.1"},{"backlink":"9.实际案例/6.postgres_dynamic_secrets.html#fig1.10.6.1","level":"1.10.6","list_caption":"Figure: 应用程序通过 Vault 获取动态数据库凭据的流程","alt":"应用程序通过 Vault 获取动态数据库凭据的流程","nro":32,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220131122650.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"应用程序通过 Vault 获取动态数据库凭据的流程","attributes":{},"skip":false,"key":"1.10.6.1"},{"backlink":"9.实际案例/8.entities_groups.html#fig1.10.8.1","level":"1.10.8","list_caption":"Figure: 实验场景","alt":"实验场景","nro":33,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201125818.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"实验场景","attributes":{},"skip":false,"key":"1.10.8.1"},{"backlink":"9.实际案例/8.entities_groups.html#fig1.10.8.2","level":"1.10.8","list_caption":"Figure: 内部组","alt":"内部组","nro":34,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201140446.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"内部组","attributes":{},"skip":false,"key":"1.10.8.2"},{"backlink":"9.实际案例/9.Cubbyhole.html#fig1.10.9.1","level":"1.10.9","list_caption":"Figure: Cubbyhole Response Wrap流程","alt":"Cubbyhole Response Wrap流程","nro":35,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/1615889324764-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"Cubbyhole Response Wrap流程","attributes":{},"skip":false,"key":"1.10.9.1"},{"backlink":"10.后记/1.关于翻译.html#fig1.11.1.1","level":"1.11.1","list_caption":"Figure: 第一次鸦片战争后签订南京条约","alt":"第一次鸦片战争后签订南京条约","nro":36,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201193526.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"第一次鸦片战争后签订南京条约","attributes":{},"skip":false,"key":"1.11.1.1"},{"backlink":"10.后记/1.关于翻译.html#fig1.11.1.2","level":"1.11.1","list_caption":"Figure: 国产电影《鸦片战争》截图","alt":"国产电影《鸦片战争》截图","nro":37,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201195443.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"国产电影《鸦片战争》截图","attributes":{},"skip":false,"key":"1.11.1.2"},{"backlink":"10.后记/1.关于翻译.html#fig1.11.1.3","level":"1.11.1","list_caption":"Figure: 国产电影《鸦片战争》截图","alt":"国产电影《鸦片战争》截图","nro":38,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201195540.png","index":3,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"国产电影《鸦片战争》截图","attributes":{},"skip":false,"key":"1.11.1.3"},{"backlink":"10.后记/1.关于翻译.html#fig1.11.1.4","level":"1.11.1","list_caption":"Figure: 国产电影《鸦片战争》截图","alt":"国产电影《鸦片战争》截图","nro":39,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201195640.png","index":4,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"国产电影《鸦片战争》截图","attributes":{},"skip":false,"key":"1.11.1.4"},{"backlink":"10.后记/1.关于翻译.html#fig1.11.1.5","level":"1.11.1","list_caption":"Figure: 国产电影《鸦片战争》截图","alt":"国产电影《鸦片战争》截图","nro":40,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201195710.png","index":5,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"国产电影《鸦片战争》截图","attributes":{},"skip":false,"key":"1.11.1.5"},{"backlink":"10.后记/1.关于翻译.html#fig1.11.1.6","level":"1.11.1","list_caption":"Figure: 国产电影《鸦片战争》截图","alt":"国产电影《鸦片战争》截图","nro":41,"url":"https://raw.githubusercontent.com/lonegunmanb/essential-vault-pic/main/20220201195740.png","index":6,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"国产电影《鸦片战争》截图","attributes":{},"skip":false,"key":"1.11.1.6"},{"backlink":"10.后记/3.中国云计算的革命尚未开始.html#fig1.11.3.1","level":"1.11.3","list_caption":"Figure: sh文件是操作系统的脚本代码文件，该Slogan意为避免在IT运维中使用sh脚本文件，首先由Splunk所提出","alt":"sh文件是操作系统的脚本代码文件，该Slogan意为避免在IT运维中使用sh脚本文件，首先由Splunk所提出","nro":42,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-7-9/1625815196004-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"sh文件是操作系统的脚本代码文件，该Slogan意为避免在IT运维中使用sh脚本文件，首先由Splunk所提出","attributes":{},"skip":false,"key":"1.11.3.1"},{"backlink":"10.后记/3.中国云计算的革命尚未开始.html#fig1.11.3.2","level":"1.11.3","list_caption":"Figure: CNCF全景图——为了将图片大小缩至可以上传图床我缩小了图片大小，这使得从图中识别项目图标更得更加困难","alt":"CNCF全景图——为了将图片大小缩至可以上传图床我缩小了图片大小，这使得从图中识别项目图标更得更加困难","nro":43,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-7-9/1625808948910-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"CNCF全景图——为了将图片大小缩至可以上传图床我缩小了图片大小，这使得从图中识别项目图标更得更加困难","attributes":{},"skip":false,"key":"1.11.3.2"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.1","level":"1.11.4","list_caption":"Figure: 加拉帕戈斯群岛位置","alt":"加拉帕戈斯群岛位置","nro":44,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638001975216-image.png","index":1,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"加拉帕戈斯群岛位置","attributes":{},"skip":false,"key":"1.11.4.1"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.2","level":"1.11.4","list_caption":"Figure: 紫色为曾经生活在马达加斯加上的象鸟（已灭绝）","alt":"紫色为曾经生活在马达加斯加上的象鸟（已灭绝）","nro":45,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638003801907-image.png","index":2,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"紫色为曾经生活在马达加斯加上的象鸟（已灭绝）","attributes":{},"skip":false,"key":"1.11.4.2"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.3","level":"1.11.4","list_caption":"Figure: 1895年欧洲猎人与一头死去的爪哇犀，与印度犀是近亲，目前几近于绝种，只剩下五十至六十头左右，仅在印尼的爪哇岛还有一个种群残存","alt":"1895年欧洲猎人与一头死去的爪哇犀，与印度犀是近亲，目前几近于绝种，只剩下五十至六十头左右，仅在印尼的爪哇岛还有一个种群残存","nro":46,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638014534314-image.png","index":3,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"1895年欧洲猎人与一头死去的爪哇犀，与印度犀是近亲，目前几近于绝种，只剩下五十至六十头左右，仅在印尼的爪哇岛还有一个种群残存","attributes":{},"skip":false,"key":"1.11.4.3"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.4","level":"1.11.4","list_caption":"Figure: 网传某地国资云","alt":"网传某地国资云","nro":47,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638015194356-image.png","index":4,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"网传某地国资云","attributes":{},"skip":false,"key":"1.11.4.4"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.5","level":"1.11.4","list_caption":"Figure: CIA并没有搞自己的“情报云”","alt":"CIA并没有搞自己的“情报云”","nro":48,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638015399383-image.png","index":5,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"CIA并没有搞自己的“情报云”","attributes":{},"skip":false,"key":"1.11.4.5"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.6","level":"1.11.4","list_caption":"Figure: 五角大楼也没有自己关门搞云，而是向主流公有云厂商招标","alt":"五角大楼也没有自己关门搞云，而是向主流公有云厂商招标","nro":49,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638015464459-image.png","index":6,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"五角大楼也没有自己关门搞云，而是向主流公有云厂商招标","attributes":{},"skip":false,"key":"1.11.4.6"},{"backlink":"10.后记/4.加拉帕戈斯云上不会有千里马.html#fig1.11.4.7","level":"1.11.4","list_caption":"Figure: 第一次鸦片战争中英国舰队在定海击败清朝帆船水师，百年屈辱由此开始","alt":"第一次鸦片战争中英国舰队在定海击败清朝帆船水师，百年屈辱由此开始","nro":50,"url":"https://gitee.com/lonegunman/pic/raw/master/2021-11-27/1638019312091-image.png","index":7,"caption_template":"图 _PAGE_LEVEL_/_PAGE_IMAGE_NUMBER_ - _CAPTION_","label":"第一次鸦片战争中英国舰队在定海击败清朝帆船水师，百年屈辱由此开始","attributes":{},"skip":false,"key":"1.11.4.7"}]},"title":"《Vault 中文手册》","gitbook":"*"},"file":{"path":"4.配置文件/5.6.storage_filesystem.md","mtime":"2022-02-04T09:02:06.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-04T13:07:05.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
